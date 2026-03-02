@@ -38,7 +38,8 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             SizedBox(height: 8.h),
             Center(
               child: Text(
-                'Enter your email, we will send a\n     verification code to email',
+                'Enter your email, we will send a\nverification code to email',
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w400,
