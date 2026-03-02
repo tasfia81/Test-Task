@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:test_task/controller/splash_controller.dart';
 import 'package:test_task/screen/onboarding_screen.dart';
 import 'package:test_task/utils/assets_path.dart';
@@ -56,10 +57,14 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
               ),
               const SizedBox(height: 30),
-              CircularProgressIndicator(
+              // CircularProgressIndicator(
+              //   color: Color(0xFF1B6EF7),
+              //   strokeWidth: 2,
+              // ),
+              SpinKitFadingCircle(
                 color: Color(0xFF1B6EF7),
-                strokeWidth: 2,
-              ),
+                size: 50,
+              )
             ],
           ),
         ),
