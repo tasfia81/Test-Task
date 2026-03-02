@@ -88,7 +88,9 @@ class _SignUpState extends State<SignUp> {
                 SizedBox(height: 18.h),
                 AlertPassword(),
                 SizedBox(height: 30.h),
-                CustomPrimaryButton(text: 'Label', onTap: () {}),
+                CustomPrimaryButton(text: 'Label', onTap: () {
+                  Get.toNamed(AppRoute.labelVerify);
+                }),
                 SizedBox(height: 20.h),
                 GestureDetector(
                   onTap: (){
