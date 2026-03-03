@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -43,6 +44,65 @@ class CustomRichText extends StatelessWidget {
                 ),
               ),
             ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+ */
+
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+class CustomRichText extends StatelessWidget {
+  final String normalText;
+  final String highlightedText;
+  final VoidCallback? onTap;
+
+  final Color normalColor;
+  final Color highlightedColor;
+
+  final FontWeight normalWeight;
+  final FontWeight highlightedWeight;
+
+  final double fontSize;
+
+  const CustomRichText({
+    super.key,
+    required this.normalText,
+    required this.highlightedText,
+    this.onTap,
+    this.normalColor = const Color(0xFF64748B),
+    this.highlightedColor = const Color(0xFF1B6EF7),
+    this.normalWeight = FontWeight.w400,
+    this.highlightedWeight = FontWeight.w600,
+    this.fontSize = 14,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      textAlign: TextAlign.center,
+      text: TextSpan(
+        children: [
+          TextSpan(
+            text: normalText,
+            style: TextStyle(
+              color: normalColor,
+              fontSize: fontSize.sp,
+              fontWeight: normalWeight,
+            ),
+          ),
+          TextSpan(
+            text: highlightedText,
+            style: TextStyle(
+              color: highlightedColor,
+              fontSize: fontSize.sp,
+              fontWeight: highlightedWeight,
+            ),
+            recognizer: TapGestureRecognizer()..onTap = onTap,
           ),
         ],
       ),
