@@ -63,8 +63,8 @@ class _LabelVerifyCodeState extends State<LabelVerifyCode> {
                 pinTheme: PinTheme(
                   shape: PinCodeFieldShape.box,
                   borderRadius: BorderRadius.circular(16.r),
-                  fieldHeight: 56.h,
-                  fieldWidth: 56.w,
+                  fieldHeight: 56.h.clamp(48, 56),
+                  fieldWidth: 56.w.clamp(48, 56),
 
                   // Border Colors
                   activeColor: const Color(0xFFE3E3E9),
@@ -77,15 +77,15 @@ class _LabelVerifyCodeState extends State<LabelVerifyCode> {
                   inactiveFillColor: Colors.white,
                 ),
 
-                // onChanged: (value) {},
-                //
-                // onCompleted: (value) {
-                //   print("OTP Completed: $value");
-                // },
+                onChanged: (value) {},
 
-                // beforeTextPaste: (text) {
-                //   return true;
-                // },
+                onCompleted: (value) {
+                  print("OTP Completed: $value");
+                },
+
+                beforeTextPaste: (text) {
+                  return true;
+                },
               ),
               SizedBox(height: 60.h),
               Center(

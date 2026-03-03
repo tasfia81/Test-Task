@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:test_task/core/app_route.dart';
 import 'package:test_task/widget/custom_back_button.dart';
 import 'package:test_task/widget/custom_primary_button.dart';
 
 import '../widget/custom_text_field.dart';
+import 'package:get/get.dart';
 
 class ResetPassword extends StatefulWidget {
   const ResetPassword({super.key});
@@ -86,7 +88,9 @@ class _ResetPasswordState extends State<ResetPassword> {
               ),
             ),
             SizedBox(height: 40.h),
-            CustomPrimaryButton(text: 'Submit', onTap: (){})
+            CustomPrimaryButton(text: 'Submit', onTap: (){
+              Get.toNamed(AppRoute.submitVerify);
+            })
           ],
         ),
       ),
