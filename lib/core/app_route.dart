@@ -5,6 +5,7 @@ import 'package:test_task/screen/onboarding_screen.dart';
 import 'package:test_task/screen/reset_password.dart';
 import 'package:test_task/screen/signin.dart';
 import 'package:test_task/screen/submit_verify_code.dart';
+import 'package:test_task/widget/submit_showDialog.dart';
 
 import '../screen/signup.dart';
 
@@ -17,6 +18,7 @@ class AppRoute{
   static const String resetPassword = '/reset_password';
   static const String labelVerify = '/label_verify_code';
   static const String submitVerify = '/submit_verify_code';
+  static const String submitShowDailog = '/submit_showDailog';
 
 
 
@@ -29,6 +31,7 @@ class AppRoute{
      GetPage(name: resetPassword, page: () => const ResetPassword()),
      GetPage(name: labelVerify, page: () => const LabelVerifyCode()),
      GetPage(name: submitVerify, page: () => const SubmitVerifyCode()),
+     GetPage(name: submitShowDailog, page: () => const SubmitShowdialog()),
    ];
 
 }

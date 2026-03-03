@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:test_task/core/app_route.dart';
 import 'package:test_task/widget/custom_back_button.dart';
 import 'package:test_task/widget/custom_rich_text.dart';
 import "package:pin_code_fields/pin_code_fields.dart";
+import 'package:test_task/widget/submit_showDialog.dart';
+import 'package:get/get.dart';
+
+import '../utils/assets_path.dart';
+import '../widget/custom_primary_button.dart';
 
 class SubmitVerifyCode extends StatefulWidget {
   const SubmitVerifyCode({super.key});
@@ -14,6 +20,44 @@ class SubmitVerifyCode extends StatefulWidget {
 class _SubmitVerifyCodeState extends State<SubmitVerifyCode> {
   final TextEditingController _otpController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  /*
+  void _showDialog() {
+    showDialog(
+      context: context,
+      builder: (context) => Padding(
+        padding: EdgeInsets.all(24),
+        child: AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.r),
+          ),
+          icon: Image.asset(AssetsPath.submit_list, height: 134.h.clamp(130, 134), width: 134.w.clamp(130, 134)),
+          title: const Text(
+            'Success',
+            style: TextStyle(
+              fontWeight: FontWeight.w700,
+              fontSize: 20,
+              color: Colors.black,
+            ),
+          ),
+          content: const Text(
+            'Your password is succesfully\ncreated',
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.w400,
+              color: Color(0xFF636F85),
+            ),
+          ),
+          actions: [CustomPrimaryButton(
+              height: 48.h,
+              width: 182.w,
+              text: 'Continue', onTap: () {})],
+        ),
+      ),
+    );
+  }
+
+  */
 
   @override
   Widget build(BuildContext context) {
@@ -77,15 +121,25 @@ class _SubmitVerifyCodeState extends State<SubmitVerifyCode> {
                   inactiveFillColor: Colors.white,
                 ),
 
-                // onChanged: (value) {},
-                //
-                // onCompleted: (value) {
-                //   print("OTP Completed: $value");
-                // },
+                onChanged: (value) {},
 
-                // beforeTextPaste: (text) {
-                //   return true;
-                // },
+                onCompleted: (value) {
+                  print("OTP Completed: $value");
+                  if (value == "1234") {
+                    Future.delayed(Duration(milliseconds: 200), () {
+                      Get.toNamed(AppRoute.submitShowDailog);
+                     // SubmitShowdialog();
+                    });
+                  } else {
+                    ScaffoldMessenger.of(
+                      context,
+                    ).showSnackBar(SnackBar(content: Text("Invalid OTP")));
+                  }
+                },
+
+                beforeTextPaste: (text) {
+                  return true;
+                },
               ),
               SizedBox(height: 60.h),
               Center(
