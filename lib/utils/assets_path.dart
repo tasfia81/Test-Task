@@ -8,4 +8,5 @@ class AssetsPath{
   static const String alerts = "$basePath/alerts.png";
   static const String submit_list = "$basePath/submit_list.png";
   static const String label_list = "$basePath/label_success.png";
+  static const String location = "$basePath/location.jpg";
 }

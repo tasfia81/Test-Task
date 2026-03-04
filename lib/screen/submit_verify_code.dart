@@ -21,12 +21,12 @@ class _SubmitVerifyCodeState extends State<SubmitVerifyCode> {
   final TextEditingController _otpController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  /*
+
   void _showDialog() {
     showDialog(
       context: context,
       builder: (context) => Padding(
-        padding: EdgeInsets.all(24),
+        padding: EdgeInsets.all(20.w),
         child: AlertDialog(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20.r),
@@ -41,6 +41,7 @@ class _SubmitVerifyCodeState extends State<SubmitVerifyCode> {
             ),
           ),
           content: const Text(
+            textAlign: TextAlign.center,
             'Your password is succesfully\ncreated',
             style: TextStyle(
               fontSize: 14,
@@ -51,13 +52,15 @@ class _SubmitVerifyCodeState extends State<SubmitVerifyCode> {
           actions: [CustomPrimaryButton(
               height: 48.h,
               width: 182.w,
-              text: 'Continue', onTap: () {})],
+              text: 'Continue', onTap: () {
+                Get.toNamed(AppRoute.enableLocation);
+          })],
         ),
       ),
     );
   }
 
-  */
+
 
   @override
   Widget build(BuildContext context) {
@@ -127,9 +130,9 @@ class _SubmitVerifyCodeState extends State<SubmitVerifyCode> {
                   print("OTP Completed: $value");
                   if (value == "1234") {
                     Future.delayed(Duration(milliseconds: 200), () {
-                      Get.toNamed(AppRoute.submitShowDailog);
-                     // SubmitShowdialog();
+                      _showDialog();
                     });
+
                   } else {
                     ScaffoldMessenger.of(
                       context,
