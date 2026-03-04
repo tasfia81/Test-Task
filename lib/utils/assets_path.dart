@@ -9,4 +9,10 @@ class AssetsPath{
   static const String submit_list = "$basePath/submit_list.png";
   static const String label_list = "$basePath/label_success.png";
   static const String location = "$basePath/location.jpg";
+  static const String us = "$basePath/united_states.png";
+  static const String id = "$basePath/Group.png";
+  static const String af = "$basePath/Afghanistan.png";
+  static const String alg = "$basePath/Algeria.png";
+  static const String my = "$basePath/Malaysia.png";
+  static const String ar = "$basePath/United Arab Emirates.png";
 }

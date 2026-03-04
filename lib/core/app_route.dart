@@ -4,6 +4,8 @@ import 'package:test_task/screen/forgot_password.dart';
 import 'package:test_task/screen/label_verify_code.dart';
 import 'package:test_task/screen/onboarding_screen.dart';
 import 'package:test_task/screen/reset_password.dart';
+import 'package:test_task/screen/select_language.dart';
+import 'package:test_task/screen/set_up_profile.dart';
 import 'package:test_task/screen/signin.dart';
 import 'package:test_task/screen/submit_verify_code.dart';
 import 'package:test_task/widget/submit_showDialog.dart';
@@ -21,6 +23,8 @@ class AppRoute{
   static const String submitVerify = '/submit_verify_code';
   static const String submitShowDailog = '/submit_showDailog';
   static const String enableLocation = '/enable_location';
+  static const String selectLanguage = '/select_language';
+  static const String setUpProfile = '/set_up_profile';
 
 
 
@@ -35,6 +39,8 @@ class AppRoute{
      GetPage(name: submitVerify, page: () => const SubmitVerifyCode()),
      GetPage(name: submitShowDailog, page: () => const SubmitShowdialog()),
      GetPage(name: enableLocation, page: () => const EnableLocation()),
+     GetPage(name: selectLanguage, page: () => const SelectLanguage()),
+     GetPage(name: setUpProfile, page: () => const SetUpProfile()),
    ];
 
 }

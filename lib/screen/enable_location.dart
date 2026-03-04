@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:test_task/core/app_route.dart';
 import 'package:test_task/utils/assets_path.dart';
 import 'package:test_task/widget/custom_primary_button.dart';
+import 'package:get/get.dart';
 
 class EnableLocation extends StatefulWidget {
   const EnableLocation({super.key});
@@ -114,12 +116,17 @@ class _EnableLocationState extends State<EnableLocation> {
               ),
 
               SizedBox(height: 20.h),
-              Text(
-                'Skip, Not Now',
-                style: TextStyle(
-                  fontSize: 16.sp.clamp(15, 16),
-                  fontWeight: FontWeight.w600,
-                  color: Colors.black,
+              GestureDetector(
+                onTap: (){
+                  Get.toNamed(AppRoute.selectLanguage);
+                },
+                child: Text(
+                  'Skip, Not Now',
+                  style: TextStyle(
+                    fontSize: 16.sp.clamp(15, 16),
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black,
+                  ),
                 ),
               ),
             ],
