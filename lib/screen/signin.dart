@@ -119,7 +119,12 @@ class _SignInState extends State<SignIn> {
                   ],
                 ),
                 SizedBox(height: 15.h),
-                CustomPrimaryButton(text: 'Sign In', onTap: () {}),
+                GestureDetector(
+                  onTap: (){
+                    Get.toNamed(AppRoute.enableLocation);
+                  },
+                  child: CustomPrimaryButton(text: 'Sign In', onTap: () {}),
+                ),
                 SizedBox(height: 15.h),
                 CustomRichText(
                   normalText: 'New to Theory?',
