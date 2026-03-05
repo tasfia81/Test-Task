@@ -15,4 +15,5 @@ class AssetsPath{
   static const String alg = "$basePath/Algeria.png";
   static const String my = "$basePath/Malaysia.png";
   static const String ar = "$basePath/United Arab Emirates.png";
+  static const String star = "$basePath/star.png";
 }

@@ -2,10 +2,13 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:test_task/controller/label_showDialog_controller.dart';
 import 'package:test_task/widget/container/about_us.dart';
 import 'package:test_task/widget/custom_back_button.dart';
 import 'package:test_task/widget/custom_primary_button.dart';
+import 'package:get/get.dart';
 
 class SetUpProfile extends StatefulWidget {
   const SetUpProfile({super.key});
@@ -15,6 +18,7 @@ class SetUpProfile extends StatefulWidget {
 }
 
 class _SetUpProfileState extends State<SetUpProfile> {
+  final dialogController = Get.put(LabelShowDialogController());
   final ImagePicker picker = ImagePicker();
   File? image;
 
@@ -77,8 +81,10 @@ class _SetUpProfileState extends State<SetUpProfile> {
               ),
               SizedBox(height: 20.h,),
               AboutUs(),
-              SizedBox(height: 12.h,),
-              CustomPrimaryButton(text: 'Next', onTap: (){}),
+              SizedBox(height: 15.h,),
+              CustomPrimaryButton(text: 'Next', onTap: (){
+                dialogController.showSuccessDialog();
+              }),
             ],
           ),
         ),

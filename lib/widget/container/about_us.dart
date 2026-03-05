@@ -6,8 +6,8 @@ class AboutUs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'About Us',
@@ -17,7 +17,7 @@ class AboutUs extends StatelessWidget {
               color: Colors.black,
             ),
           ),
-          SizedBox(height: 8.h),
+          SizedBox(height: 10.h),
           Container(
             height: 216.h,
             width: 335.w,
@@ -75,7 +75,7 @@ class AboutUs extends StatelessWidget {
               color: Colors.black,
             ),
           ),
-          SizedBox(height: 8.h),
+          SizedBox(height: 10.h),
           Container(
             height: 52.h,
             width: 335.w,
@@ -99,7 +99,6 @@ class AboutUs extends StatelessWidget {
             ),
           ),
         ],
-      ),
     );
   }
 }

@@ -1,8 +1,10 @@
 import 'package:get/get.dart';
 import 'package:test_task/screen/enable_location.dart';
 import 'package:test_task/screen/forgot_password.dart';
+import 'package:test_task/screen/home_screen.dart';
 import 'package:test_task/screen/label_verify_code.dart';
 import 'package:test_task/screen/onboarding_screen.dart';
+import 'package:test_task/screen/product_details.dart';
 import 'package:test_task/screen/reset_password.dart';
 import 'package:test_task/screen/select_language.dart';
 import 'package:test_task/screen/set_up_profile.dart';
@@ -25,6 +27,8 @@ class AppRoute{
   static const String enableLocation = '/enable_location';
   static const String selectLanguage = '/select_language';
   static const String setUpProfile = '/set_up_profile';
+  static const String homeScreen = '/home_screen';
+  static const String productDetails = '/product-details';
 
 
 
@@ -41,6 +45,8 @@ class AppRoute{
      GetPage(name: enableLocation, page: () => const EnableLocation()),
      GetPage(name: selectLanguage, page: () => const SelectLanguage()),
      GetPage(name: setUpProfile, page: () => const SetUpProfile()),
+     GetPage(name: homeScreen, page: () => const HomeScreen()),
+     GetPage(name: productDetails, page: () => const ProductDetails()),
    ];
 
 }
