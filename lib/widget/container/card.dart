@@ -101,82 +101,86 @@ class ProductCard extends StatelessWidget {
               ),
 
               /// BOTTOM PART
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 10.w,
-                    vertical: 8.h,
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+              /// expanded
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 10.w,
+                  vertical: 8.h,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
 
-                      SizedBox(height: 10.h),
+                    SizedBox(height: 10.h),
 
-                      /// TITLE
-                      Text(
-                        title,
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w600,
+                    /// TITLE
+                    Text(
+                      title,
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+
+                    SizedBox(height: 4.h),
+
+                    /// STOCK
+                    Row(
+                      children: [
+                        Icon(Icons.check,
+                            color:  Color(0xFF52D238), size: 14.sp),
+                        SizedBox(width: 3.w),
+                        Text(
+                          "In Stock",
+                          style: TextStyle(
+                            color:  Color(0xFF52D238),
+                            fontSize: 11.sp,
+                          ),
                         ),
-                      ),
+                      ],
+                    ),
 
-                      SizedBox(height: 4.h),
+                    // Spacer(),
+                    SizedBox(width: 15.w),
 
-                      /// STOCK
-                      Row(
-                        children: [
-                          Icon(Icons.check,
-                              color:  Color(0xFF52D238), size: 14.sp),
-                          SizedBox(width: 3.w),
-                          Text(
-                            "In Stock",
-                            style: TextStyle(
-                              color:  Color(0xFF52D238),
-                              fontSize: 11.sp,
-                            ),
+                    /// BUTTONS
+                    Row(
+                      children: [
+                        ///expanded
+                        Container(
+                          height: 26.h,
+                         width: 85.w,
+                         // padding:
+                          //EdgeInsets.symmetric(vertical: 6.h),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFEDEEF4),
+                            borderRadius:
+                            BorderRadius.circular(100.r),
                           ),
-                        ],
-                      ),
-
-                      // Spacer(),
-                     // SizedBox(width: 8.w),
-
-                      /// BUTTONS
-                      Row(
-                        children: [
-                          Expanded(
-                            child: Container(
-                              padding:
-                              EdgeInsets.symmetric(vertical: 6.h),
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFEDEEF4),
-                                borderRadius:
-                                BorderRadius.circular(100.r),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "View Details",
-                                  style: TextStyle(
-                                    color: const Color(0xFF1B6EF7),
-                                    fontSize: 9.sp,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
+                          child: Center(
+                            child: Text(
+                              "View Details",
+                              style: TextStyle(
+                                color: const Color(0xFF1B6EF7),
+                                fontSize: 9.sp,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
                           ),
-                          SizedBox(width: 6.w),
-                          Container(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 10.w, vertical: 6.h),
-                            decoration: BoxDecoration(
-                              borderRadius:
-                              BorderRadius.circular(100.r),
-                              border: Border.all(
-                                  color: const Color(0xFFE3E3E9)),
-                            ),
+                        ),
+                        SizedBox(width: 6.w),
+                        Container(
+                          height: 26.h,
+                       width: 39.w,
+                       //   padding: EdgeInsets.symmetric(
+                         //     horizontal: 10.w, vertical: 6.h),
+                          decoration: BoxDecoration(
+                            borderRadius:
+                            BorderRadius.circular(100.r),
+                            border: Border.all(
+                                color: const Color(0xFFE3E3E9)),
+                          ),
+                          child: Center(
                             child: Text(
                               "Edit",
                               style: TextStyle(
@@ -185,11 +189,11 @@ class ProductCard extends StatelessWidget {
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
+                          ),
+                        )
+                      ],
+                    )
+                  ],
                 ),
               ),
             ],

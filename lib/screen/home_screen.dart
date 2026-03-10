@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:test_task/core/app_route.dart';
 import 'package:test_task/utils/assets_path.dart';
+import 'package:test_task/widget/custom_primary_button.dart';
 import 'package:test_task/widget/grid_view.dart';
+import 'package:get/get.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -68,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(height: 15.h),
           
               Container(
-                height: 820.h,
+                height: 867.h,
                 width: double.infinity,
                 decoration: const BoxDecoration(
                   color: Colors.white,
@@ -90,21 +93,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           color: Colors.black,
                         ),
                       ),
-                      //
-                      // SizedBox(height: 10.h),
-                      //
-                      // /// TAB BAR
-                      // const TabBar(
-                      //   labelColor: Colors.black,
-                      //   tabs: [
-                      //     Tab(text: "All"),
-                      //     Tab(text: "Popular"),
-                      //     Tab(text: "Newest"),
-                      //   ],
-                      // ),
           
                       SizedBox(height: 10.h),
-          
                       /// TAB VIEW
                       Expanded(
                         child: TabBarView(
@@ -115,6 +105,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       ),
+                      SizedBox(height: 15.h,),
+                      CustomPrimaryButton(text: 'Create Product', onTap: (){
+                        Get.toNamed(AppRoute.productDetails);
+                      })
                     ],
                   ),
                 ),
