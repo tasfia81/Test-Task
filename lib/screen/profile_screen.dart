@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:test_task/widget/CustomBottomBorderItem.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -26,6 +27,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       });
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,13 +59,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 12.h,),
+            SizedBox(height: 12.h),
             Center(
-              child: Text('Wade Warren',style: TextStyle(
-                fontSize: 18.sp,fontWeight: FontWeight.w500,color: Colors.black
-              ),),
+              child: Text(
+                'Wade Warren',
+                style: TextStyle(
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black,
+                ),
+              ),
             ),
-            SizedBox(height: 10.h,),
+            SizedBox(height: 50.h),
+            CustomBottomBorderItem(
+              icon: Icons.edit_calendar_outlined,
+              text: 'Edit Profile',
+            ),
+            SizedBox(height: 12.h,),
+            CustomBottomBorderItem(
+              icon: Icons.verified_outlined,
+              text: 'Support',
+            ),
+            SizedBox(height: 12.h,),
+            CustomBottomBorderItem(icon: Icons.support_agent, text: 'Privacy'),
+            SizedBox(height: 12.h,),
+            CustomBottomBorderItem(
+              icon: Icons.logout,
+              text: 'Logout',
+              iconColor: Color(0xFFFFC72C),
+              textColor: Color(0xFFFFC72C),
+            ),
           ],
         ),
       ),

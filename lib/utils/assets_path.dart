@@ -21,4 +21,5 @@ class AssetsPath{
   static const String location3 = "$basePath/location_3.png";
   static const String vector = "$basePath/Vector.png";
   static const String headphone = "$basePath/headphone.png";
+  static const String photo = "$basePath/photo.png";
 }
