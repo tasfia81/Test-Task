@@ -25,46 +25,51 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Padding(
                 padding: EdgeInsets.all(10.w),
-                child: Row(
-                  children: [
-                    Image.asset(
-                      AssetsPath.profilePic,
-                      height: 44.h,
-                      width: 44.w,
-                    ),
-                    SizedBox(width: 8.w),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          ' Hi, Wade Warren!',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 12.sp,
-                            color: Colors.white,
+                child: GestureDetector(
+                  onTap: (){
+                    Get.toNamed(AppRoute.profileScreen);
+                  },
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        AssetsPath.profilePic,
+                        height: 44.h,
+                        width: 44.w,
+                      ),
+                      SizedBox(width: 8.w),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            ' Hi, Wade Warren!',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12.sp,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
-                        Row(
-                          children: [
-                            Image.asset(
-                              AssetsPath.vector,
-                              height: 20.h,
-                              width: 20.w,
-                            ),
-                            SizedBox(width: 5.w),
-                            Text(
-                              'Golder Avenue, Abuja',
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w600,
-                                color: Colors.white,
+                          Row(
+                            children: [
+                              Image.asset(
+                                AssetsPath.vector,
+                                height: 20.h,
+                                width: 20.w,
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
+                              SizedBox(width: 5.w),
+                              Text(
+                                'Golder Avenue, Abuja',
+                                style: TextStyle(
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
           

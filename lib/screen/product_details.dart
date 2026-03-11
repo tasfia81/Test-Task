@@ -1,90 +1,9 @@
-// import 'package:flutter/material.dart';
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:test_task/utils/assets_path.dart';
-//
-// class ProductDetails extends StatefulWidget {
-//   const ProductDetails({super.key});
-//
-//   @override
-//   State<ProductDetails> createState() => _ProductDetailsState();
-// }
-//
-// class _ProductDetailsState extends State<ProductDetails> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       backgroundColor: Colors.white,
-//       body: Padding(
-//         padding: EdgeInsets.all(16.w),
-//         child: Column(
-//           children: [
-//             Row(
-//               children: [
-//                 BackButton(),
-//                 Center(
-//                   child: Text(
-//                     '                Service Detail',
-//                     style: TextStyle(
-//                       fontSize: 20.sp,
-//                       fontWeight: FontWeight.w600,
-//                       color: Colors.black,
-//                     ),
-//                   ),
-//                 ),
-//
-//                 /// IMAGE PART
-//                 Container(
-//                   height: 200.h,
-//                   width: double.infinity,
-//                   decoration: BoxDecoration(
-//                     borderRadius: BorderRadius.vertical(
-//                       top: Radius.circular(12.r),
-//                     ),
-//                     image: DecorationImage(
-//                       image: AssetImage(AssetsPath.headphone),
-//                       fit: BoxFit.cover,
-//                     ),
-//                   ),
-//                   child: Stack(
-//                     children: [
-//
-//                       /// CATEGORY
-//                       Positioned(
-//                         top: 8,
-//                         left: 8,
-//                         child: Container(
-//                           padding: EdgeInsets.symmetric(
-//                               horizontal: 8.w, vertical: 4.h),
-//                           decoration: BoxDecoration(
-//                             color: Colors.white,
-//                             borderRadius: BorderRadius.circular(100.r),
-//                           ),
-//                           child: Text(
-//                             "ELECTRONICS",
-//                             style: TextStyle(
-//                               fontSize: 10.sp,
-//                               color:  Color(0xFF7172CC),
-//                               fontWeight: FontWeight.w500,
-//                             ),
-//                           ),
-//                         ),
-//                       ),
-//                     ],
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:test_task/core/app_route.dart';
 import 'package:test_task/utils/assets_path.dart';
 import 'package:test_task/widget/custom_primary_button.dart';
+import 'package:get/get.dart';
 
 class ProductDetails extends StatelessWidget {
   const ProductDetails({super.key});
@@ -99,7 +18,9 @@ class ProductDetails extends StatelessWidget {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () {},
+          onPressed: () {
+            Get.back();
+          },
         ),
         centerTitle: true,
         title: Text(
@@ -232,8 +153,10 @@ class ProductDetails extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 20.h),
-            CustomPrimaryButton(text: 'Edit Product', onTap: () {}),
+            SizedBox(height: 50.h),
+            CustomPrimaryButton(text: 'Edit Product', onTap: () {
+              Get.toNamed(AppRoute.editProduct);
+            }),
           ],
         ),
       ),
