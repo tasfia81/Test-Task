@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Hi, Wade Warren!',
+                          ' Hi, Wade Warren!',
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 12.sp,

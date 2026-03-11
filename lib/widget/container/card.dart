@@ -1,33 +1,3 @@
-// import 'package:flutter/cupertino.dart';
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:test_task/utils/assets_path.dart';
-//
-// class Card extends StatefulWidget {
-//   const Card({super.key});
-//
-//   @override
-//   State<Card> createState() => _CardState();
-// }
-//
-// class _CardState extends State<Card> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       height: 200.h,
-//       width: 157.w,
-//       decoration: BoxDecoration(
-//         color: Color(0xFFF6F6F6),
-//         borderRadius: BorderRadius.circular(12),
-//       ),
-//       child: Column(
-//         children: [
-//           Image.asset(AssetsPath.headphone, height: 100.h, width: 157.w),
-//         ],
-//       ),
-//     );
-//   }
-// }
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
