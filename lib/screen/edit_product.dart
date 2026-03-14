@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:test_task/core/app_route.dart';
 import 'package:test_task/utils/assets_path.dart';
 import 'package:test_task/widget/custom_primary_button.dart';
 
@@ -99,7 +100,10 @@ class _EditProductState extends State<EditProduct> {
                         color: Color(0xFF636F85),
                       ),
                     ),
-                    IconButton(onPressed: (){}, icon: Icon(Icons.keyboard_arrow_down_rounded))
+                    IconButton(
+                      onPressed: () {},
+                      icon: Icon(Icons.keyboard_arrow_down_rounded),
+                    ),
                   ],
                 ),
               ),
@@ -128,6 +132,93 @@ class _EditProductState extends State<EditProduct> {
                     color: Color(0xFF636F85),
                   ),
                 ),
+              ),
+              SizedBox(height: 25.h),
+              Text(
+                'Stoke',
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16.sp,
+                  color: Colors.black,
+                ),
+              ),
+              SizedBox(height: 20.h),
+              Row(
+                children: [
+                  Container(
+                    height: 34.h,
+                    width: 22.w,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10.r),
+                      border: Border.all(color: Color(0xFF1B6DF3)),
+                    ),
+                    child: Center(
+                      child: Icon(
+                        Icons.keyboard_arrow_down_rounded,
+                        color: Color(0xFF1B6DF3),
+                      ),
+                    ),
+                  ),
+                  SizedBox(width: 4.w),
+                  Text(
+                    'Available',
+                    style: TextStyle(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF636F85),
+                    ),
+                  ),
+                  SizedBox(width: 20.w),
+                  Container(
+                    height: 34.h,
+                    width: 22.w,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10.r),
+                      border: Border.all(color: Color(0xFF636F85)),
+                    ),
+                  ),
+                  SizedBox(width: 4.w),
+                  Text(
+                    'Not Available',
+                    style: TextStyle(
+                      fontSize: 14.sp,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xFF636F85),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20.h),
+              Text(
+                'Product Price',
+                style: TextStyle(
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black,
+                ),
+              ),
+              Row(
+                children: [
+                  Image.asset(AssetsPath.dollerIcon, height: 22.h, width: 22.w),
+                  SizedBox(width: 4.w),
+                  Text(
+                    'Enter Price',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 14.sp,
+                      color: Color(0xFF636F85),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 25.h),
+              CustomPrimaryButton(
+                text: 'Submit',
+                onTap: () {
+                  Get.toNamed(AppRoute.addProduct);
+                },
               ),
             ],
           ),
